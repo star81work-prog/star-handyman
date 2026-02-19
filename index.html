@@ -88,6 +88,50 @@ padding:40px 20px;
 
 .cta h2{color:white;margin-bottom:20px;
 }
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:1000;	 
+}
+
+.popup-content{
+    background:white;
+    padding:20px;
+    width:90%;
+    max-width:400px;
+    margin:10% auto;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    gap:10px; 
+}
+ .popup-content input,
+.popup-content textarea{
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.popup-content button{
+    padding:10px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;   
+}
+.close{
+    text-align:right;
+    cursor:pointer;
+    font-size:20px;
+}
+   
 .gallery{
 display: flex;
 gap: 15px;
@@ -129,23 +173,108 @@ padding:20px;
 <div class="card">
 <h3>TV Mounting</h3>
 <p>Secure and perfect alignment with stud detection, safe drilling and soundbar mounting available.</p>
+<button onclick="openBooking('TV Mounting')">
+Book Now
+</button>
 </div>    
 <div class="card">    
-<h3>Wall Picture Installation</h3>
+<h3>Hang Art, Mirror & Decor</h3>
 <p>Secure and perfectly aligned mounting for apartments and homes.</p>
+<button onclick="openBooking('Hang Art, Mirror & Decor')">
+Book Now
+</button>
 </div>
 <div class="card">
 <h3>Furniture Assembly</h3>
 <p>Fast and professional assembly for all furniture types.</p>
+<button onclick="openBooking('Furniture Assembly')">
+Book Now
+</button>
 </div>
 <div class="card">
 <h3>Home Repairs</h3>
 <p>Doors, drywall patching, fixture replacement and minor repairs.</p>
+<button onclick="openBooking('Home Repairs')">
+Book Now
+</button>
 </div>
 <div class="card">
 <h3>Apartment Maintenance</h3>
 <p>Reliable services for tenants and property managers.</p>
+<button onclick="openBooking('Apartment Maintenance')">
+Book Now
+</button>    
 </div>
+<div class="card">
+<h3>Install Blinds</h3>
+<p>Secure and Perfect Fixing.</p>
+<button onclick="openBooking('Install Blinds')">
+Book Now
+</button>
+</div>
+<div class="card">
+<h3>General Mounting</h3>
+<p>Secure and Perfect aligned mounted</p>
+<button onclick="openBooking('General Mounting')">
+Book Now
+</button>
+</div>
+<div id="bookingPopup" class="popup">
+     <div class="popup-content">
+          <span class="close" onclick="closeBooking()">&times;</span>
+          
+          <h3 id="serviceTitle"></h3>
+          <form action="save_booking.php" method="POST">
+              <input type="hidden" name="service" id="hiddenService">
+              <input type="text" name="name" placeholder="Name" required>
+              <input type="tel" name="phone" placeholder="Phone Number" required>
+              <input type="text" name="address" placeholder="Service Address" required>
+              <textarea name="task" placeholder="Describe the task" required></textarea>
+              <input type="date" name="date" required>
+
+              <button type="submit">Submit Booking</button>
+         </form>
+         <div id="confirmationMessage" style="display:none; color:green; margin-top:10px; font-weight:bold;">
+           ✅ Booking received! Thank you.
+         </div>
+     </div>
+</div>
+<script>
+function openBooking(service){
+    document.getElementById("bookingPopup").style.display ="block";
+    document.getElementById("hiddenService").value = service;
+    document.getElementById("serviceTitle").innerText = service;
+
+} 
+function closeBooking(){
+   document.getElementById("bookingPopup").style.display="none";
+}
+// Ms Excel Script Web App URL
+const Excel_URL = "https://1drv.ms/x/c/781401B3FF3D0932/AVn46B5puNFNhAu74ncOpxA?e=Uy99A9";
+
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    formData.append("service", selectedService);
+
+    fetch(SHEET_URL, {
+        method: "POST",
+        body: formData
+    }).then(response => response.text())
+      .then(data => {
+          document.getElementById("confirmationMessage").style.display = "block";
+          closeBooking();
+          this.reset();
+          setTimeout(() => {
+              document.getElementById("confirmationMessage").style.display = "none";
+          }, 4000);
+      }).catch(error => {
+          alert("Error submitting booking, please try again.");
+          console.error(error);
+      });
+});
+</script>    
 </div>
 </section>
 <section>
@@ -197,6 +326,7 @@ padding:20px;
 </body>
 
 </html>
+
 
 
 
