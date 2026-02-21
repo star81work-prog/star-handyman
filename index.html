@@ -318,30 +318,70 @@ Book Now
   </div>
 </div>
 
-<script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbzmQ9IbXRAF1cJ2KYbLFDLKf5lJwyqJ1u-WBTeSsR1JGG70PmP_TohermBZE8q3PaoE/exec";
-    
-function openBooking(serviceName){
-  document.getElementById("serviceTitle").innerText = serviceName;
-  document.getElementById("hiddenService").value = serviceName;
-  document.getElementById("bookingPopup").style.display = "block";
-}
+ <script>
 
-function closeBooking(){
-  document.getElementById("bookingPopup").style.display = "none";
-}
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
 
-function submitBooking(e){
-  e.preventDefault();
-  document.getElementById("confirmationMessage").style.display = "block";
-  setTimeout(()=>{
-    document.getElementById("bookingPopup").style.display = "none";
-    document.getElementById("confirmationMessage").style.display = "none";
-  },2000);
-}
-</script>
+    e.preventDefault();
+
+
+
+    const formData = {
+
+      date: document.getElementById("date").value,
+
+      name: document.getElementById("name").value,
+
+      phone: document.getElementById("phone").value,
+
+      address: document.getElementById("address").value,
+
+      description: document.getElementById("description").value
+
+    };
+
+
+
+    fetch("https://script.google.com/macros/s/AKfycbw1RabjIJwWAiTkm9BMciujuXPpeJgGGWEqIAaRHOEY/dev", {
+
+      method: "POST",
+
+      headers: {
+
+        "Content-Type": "application/json"
+
+      },
+
+      body: JSON.stringify(formData)
+
+    })
+
+    .then(response => response.text())
+
+    .then(data => {
+
+      alert("Booking submitted successfully!");
+
+      document.getElementById("bookingForm").reset();
+
+    })
+
+    .catch(error => {
+
+      alert("Error submitting booking.");
+
+      console.error(error);
+
+    });
+
+  });
+
+  </script>
+
+
 </body>
 </html>
+
 
 
 
