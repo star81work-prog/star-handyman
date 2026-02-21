@@ -286,12 +286,12 @@ padding:20px;
     <span class="close" onclick="closeBooking()">&times;</span>
     <h3 id="serviceTitle"></h3>
     <form onsubmit="submitBooking(event)">
-      <input type="hidden" id="hiddenService">
-      <input type="text" placeholder="Name" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <input type="text" placeholder="Service Address" required>
-      <textarea placeholder="Describe the task" required></textarea>
-      <input type="date" required>
+      <input type="hidden" id="hiddenService"name="service">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="address" placeholder="Service Address" required>
+      <textarea name="description" placeholder="Describe the task" required></textarea>
+      <input type="date" name="date" required>
       <button type="submit">Submit Booking</button>
     </form>
     <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
@@ -313,7 +313,7 @@ document.getElementById("bookingPopup").style.display="none";
     
 function submitBooking(e){
   e.preventDefault();
-  const formData = e.target;
+  const form = e.target;
     const formData=new FormData(form);
 fetch(scriptURL,{
 method: "POST",
@@ -330,13 +330,10 @@ document.getElementById("confirmationMessage").style.display="none";
 })
 .catch(()=>alert("Booking failed. Try again."));
 }
-   
 </script>
-
-
-
 </body>
 </html>
+
 
 
 
