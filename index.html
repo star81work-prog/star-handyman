@@ -175,14 +175,11 @@ padding:20px;
 }    
 
 @media(max-width:768px){
-  .hero h2{
-    font-size: 28px;
+  .hero h2{font-size: 28px;
   }
 }
-    
 </style>
 </head>
-
 <body>
 
 <header>
@@ -246,7 +243,7 @@ padding:20px;
 </div> 
 </section>
  
-<section>    
+<section id="work">    
 <h2>Our Work</h2>
 <div class="gallery">
 <img src="light.jpeg" alt="Light installation work"width="300">
@@ -300,7 +297,6 @@ padding:20px;
   </div>
 </div>
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbxRNWY51USAczwRXgt1LxMa-W1M3pSDmAGiqYMdcZrHVEh4vmDSDKNH4SKD5JlnO1JOQw/exec";
 function openBooking(service){
 document.getElementById("bookingPopup").style.display="block";
 document.getElementById("serviceTitle").innerText=service;
@@ -315,9 +311,9 @@ function submitBooking(e){
   e.preventDefault();
   const form = e.target;
     const formData=new FormData(form);
-fetch(scriptURL,{
+fetch("https://script.google.com/macros/s/AKfycbxRNWY51USAczwRXgt1LxMa-W1M3pSDmAGiqYMdcZrHVEh4vmDSDKNH4SKD5JlnO1JOQw/exec",{
 method: "POST",
-body: formData
+body: formData,
  mode: "no-cors"
 })
 .then(()=> {
@@ -333,6 +329,7 @@ document.getElementById("confirmationMessage").style.display="none";
 </script>
 </body>
 </html>
+
 
 
 
