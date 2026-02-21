@@ -322,24 +322,23 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbxRNWY51USAczwRXgt1Lx
 
 function submitBooking(e){
   e.preventDefault();
+  const formData = new FormData(e.target);
 
-  const service = document.getElementById("hiddenService").value;
-  const form = e.target;
-
-  const data = {
-    service: service,
-    name: form[1].value,
-    phone: form[2].value,
-    address: form[3].value,
-    description: form[4].value,
-    date: form[5].value
+   const data = {
+    service: document.getElementById("hiddenService").value,
+    name: formData.get("name"),
+    phone: formData.get("phone"),
+    address: formData.get("address"),
+    description: formData.get("description"),
+    date: formData.get("date")
   };
-
+ 
   fetch(scriptURL, {
     method: "POST",
     body: JSON.stringify(data)
   })
-  .then(response => {
+  .then(response => response.text())
+  .then(()=>{
     document.getElementById("confirmationMessage").style.display = "block";
     setTimeout(()=>{
       document.getElementById("bookingPopup").style.display = "none";
@@ -347,7 +346,10 @@ function submitBooking(e){
       form.reset();
     },2000);
   })
-  .catch(error => alert("Error! Try again."));
+  .catch(error =>{
+      alert("Booking failed. Try again.");
+      console.error(error);
+  });  
 }
 </script>
 
@@ -355,6 +357,7 @@ function submitBooking(e){
 
 </body>
 </html>
+
 
 
 
