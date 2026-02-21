@@ -103,7 +103,25 @@ text-align:center;
 font-size:18px;
 margin-bottom:20px;
 }
+.btn-primary{
+    background:#2563eb;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
+.btn-secondary{
+    background:#e36414;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
 .cta{
 background:#2563eb;
 color:white;
@@ -212,6 +230,8 @@ padding:20px;
     <h1>Star Handyman Services</h1>
 
 <p>Reliable • Affordable • Professional</p>
+</header> 
+<section>
 <nav>
 <a href="#">Home</a>
 <a href="#">Services</a>
@@ -219,16 +239,19 @@ padding:20px;
 <a href="#">Contact</a>
 <a href="tel:5308139404" class="call-btn">Call Now</a>
 </nav>
-       
-</header>
-<div class="hero">  </div>
+</section>    
 
 <section>
+<div class="hero"> 
+<h2>Reliable & Affordable Handyman in Fairfield, CA</h2>
+<p>10+ Years Experience in Home Repairs & Installations</p>
+<button class="btn-primary">Get Free Estimate</button>
+<button class="btn-secondary">Call 530-813-9404</button>    
+</div>    
 <div class="card">
 <p>Expert TV mounting , furniture assembly and repair, Basic plumbing, Basic electrical, Wall painting and finishing,Door window installation and Fixing minor household issues.</p>
 <a href="tel:7076486070" class="btn">📞 Call Now: 707-648-6070</a>
 </div>   
-<section class="hero">
 <h2>Reliable & Affordable Handyman in Fairfield, CA</h2>
 <p>10+ Years Experience in Home Repairs & Installations</p>
 <button class="btn-primary">Get Free Estimate</button>
@@ -307,30 +330,22 @@ Book Now
      </div>
 </div>
 <script>
-function scrollToBooking(){
-  document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+function openBooking(serviceName){
+    document.getElementById("serviceTitle").innerText = serviceName;
+    document.getElementById("hiddenService").value = serviceName;
+    document.getElementById("bookingPopup").style.display = "block";
 }
 
-document.getElementById("bookingForm").addEventListener("submit", function(e){
-  e.preventDefault();
+function closeBooking(){
+    document.getElementById("bookingPopup").style.display = "none";
+}
 
-  fetch("https://docs.google.com/spreadsheets/d/1WAE4s-cI5m6oVppe-AAunjPpSCqTlJ8Se8_K_6_wAQk/edit?usp=sharing", {
-    method: "POST",
-    body: JSON.stringify({
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      phone: document.getElementById("phone").value,
-      service: document.getElementById("service").value,
-      message: document.getElementById("message").value
-    })
-  })
-  .then(res => {
-    alert("Booking Confirmed ✅ We will contact you soon!");
-    document.getElementById("bookingForm").reset();
-  })
-  .catch(err => alert("Submission failed. Please try again."));
+// Optional confirmation message (without backend)
+document.querySelector("#bookingPopup form").addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("confirmationMessage").style.display = "block";
+    this.reset();
 });
-
 </script>    
 </div>
 </section>
@@ -355,7 +370,7 @@ and surrounding areas with honest, affordable, and professional service.</p>
 <section>
 <h2>Service Area</h2>
 <div class="card">
-<p>Serving Fairfield, Vacaville, Dixon, Davis, Napa, Sonama, Vallejo and surrounding areas. Same-day appointments available.</p>
+<p>Serving Fairfield, Vacaville, Dixon, Davis, Napa, Sonoma, Vallejo and surrounding areas. Same-day appointments available.</p>
 </div>
 </section>
 
@@ -385,12 +400,13 @@ and surrounding areas with honest, affordable, and professional service.</p>
 
 <footer>
 <p> Star Handyman Services | Fairfield, CA</p>
-<p>Phone: 530-813-9404 | Email: star81work@gmail.com</p>
+<p>Phone: 707-648-6070 | Email: star81work@gmail.com</p>
 </footer>
 
 </body>
 
 </html>
+
 
 
 
