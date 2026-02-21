@@ -22,8 +22,9 @@ text-align:center;
 }
 
 header h1{font-size:30px;}
-    deleted logo
 header p{font-size:20px;margin-top:5px;}
+
+nav{margin-top:10px;}    
  nav a {
 color: blue;
 text-decoration: none;
@@ -41,7 +42,7 @@ background-size:cover;
 background-position:center;
 color:white;
 text-align:center;
-padding:285px 10px;
+padding:200px 10px;
 }
 
 .hero h2{font-size:38px;margin-bottom:20px;}
@@ -114,8 +115,7 @@ height:200px;
 object-fit:cover;
 border-radius: 10px;
 }    
-.about{
-    background:#f9f9f9;
+
 }   
 .cta{
 background:#2563eb;
@@ -174,7 +174,6 @@ padding:20px;
     font-size:20px;
 }    
 
-/* MOBILE */
 @media(max-width:768px){
   .hero h2{
     font-size: 28px;
@@ -191,11 +190,11 @@ padding:20px;
 
 <p>Reliable • Affordable • Professional</p>
 <nav>
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Our work</a>    
-<a href="#">About</a>
-<a href="#">Contact</a>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#work">Our work</a>    
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
 <a href="tel:7076486070" class="btn">📞 Call Now</a>
 </nav>
 </header>     
@@ -212,51 +211,37 @@ padding:20px;
 <div class="card">    
 <h3>TV Mounting</h3>
 <p>Secure and perfect alignment with stud detection, safe drilling and soundbar mounting available.</p>
-<button onclick="openBooking('TV Mounting')">
-Book Now
-</button>
+<button onclick="openBooking('TV Mounting')">Book Now</button>
 </div>    
 <div class="card">    
 <h3>Hang Art, Mirror & Decor</h3>
 <p>Secure and perfectly aligned mounting for apartments and homes.</p>
-<button onclick="openBooking('Hang Art, Mirror & Decor')">
-Book Now
-</button>
+<button onclick="openBooking('Hang Art, Mirror & Decor')">Book Now</button>
 </div>
 <div class="card">
 <h3>Furniture Assembly</h3>
 <p>Fast and professional assembly for all furniture types.</p>
-<button onclick="openBooking('Furniture Assembly')">
-Book Now
-</button>
+<button onclick="openBooking('Furniture Assembly')">Book Now</button>
 </div>
 <div class="card">
 <h3>Home Repairs</h3>
 <p>Doors, drywall patching, fixture replacement and minor repairs.</p>
-<button onclick="openBooking('Home Repairs')">
-Book Now
-</button>
+<button onclick="openBooking('Home Repairs')">Book Now</button>
 </div>
 <div class="card">
 <h3>Apartment Maintenance</h3>
 <p>Reliable services for tenants and property managers.</p>
-<button onclick="openBooking('Apartment Maintenance')">
-Book Now
-</button>    
+<button onclick="openBooking('Apartment Maintenance')">Book Now</button>    
 </div>
 <div class="card">
 <h3>Install Blinds</h3>
 <p>Secure and Perfect Fixing.</p>
-<button onclick="openBooking('Install Blinds')">
-Book Now
-</button>
+<button onclick="openBooking('Install Blinds')">Book Now</button>
 </div>
 <div class="card">
 <h3>General Mounting</h3>
 <p>Secure and Perfect aligned mounting</p>
-<button onclick="openBooking('General Mounting')">
-Book Now
-</button>
+<button onclick="openBooking('General Mounting')">Book Now</button>
 </div>
     
 <section>    
@@ -271,6 +256,11 @@ Book Now
 </div>
 </section>
 
+<section id="about">
+<h2>About Me</h2>
+<p>Over 10 years of professional handyman experience serving Fairfield and surrounding areas.</p>
+</section>  
+    
 <section>
 <h2>Service Area</h2>
 <div class="card">
@@ -278,27 +268,17 @@ Book Now
 </div>
 </section>
     
-    
-</div>
-</section> 
-<section id="about" class="about">
-<h2>About Me</h2>
-<p>I have over 10 years of experience, I proudly serve Fairfield and surrounding areas with honest and professional service.</p>
-</section>
-
-<!-- CALL TO ACTION -->
 <div class="cta">
 <h2>Need a Reliable Handyman Today?</h2>
 <a href="tel:7076486070" class="btn">Call 707-648-6070</a>
 </div>
 
-<!-- FOOTER -->
 <footer id="contact">
 <p>Star Handyman Services | Fairfield, CA</p>
 <p> Email: star81work@gmail.com</p>
 </footer>
 
-<!-- BOOKING POPUP -->
+
 <div id="bookingPopup" class="popup">
   <div class="popup-content">
     <span class="close" onclick="closeBooking()">&times;</span>
@@ -319,44 +299,42 @@ Book Now
 </div>
 <script>
 const scriptURL = "https://script.google.com/macros/s/AKfycbxRNWY51USAczwRXgt1LxMa-W1M3pSDmAGiqYMdcZrHVEh4vmDSDKNH4SKD5JlnO1JOQw/exec";
+function openBooking(service){
+document.getElementById("bookingPopup").style.display="block";
+document.getElementById("serviceTitle").innerText=service;
+document.getElementById("hiddenService").value=service;
+}
 
+function closeBooking(){
+document.getElementById("bookingPopup").style.display="none";
+}
+    
 function submitBooking(e){
   e.preventDefault();
-  const formData = new FormData(e.target);
-
-   const data = {
-    service: document.getElementById("hiddenService").value,
-    name: formData.get("name"),
-    phone: formData.get("phone"),
-    address: formData.get("address"),
-    description: formData.get("description"),
-    date: formData.get("date")
-  };
- 
-  fetch(scriptURL, {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
-  .then(response => response.text())
-  .then(()=>{
-    document.getElementById("confirmationMessage").style.display = "block";
-    setTimeout(()=>{
-      document.getElementById("bookingPopup").style.display = "none";
-      document.getElementById("confirmationMessage").style.display = "none";
-      form.reset();
-    },2000);
-  })
-  .catch(error =>{
-      alert("Booking failed. Try again.");
-      console.error(error);
-  });  
+  const formData = e.target;
+    const formData=new FormData(form);
+fetch(scriptURL,{
+method:"POST",
+body:formData
+})
+.then(()=> {
+document.getElementById("confirmationMessage").style.display="block";
+setTimeout(()=>{
+closeBooking();
+form.reset();
+document.getElementById("confirmationMessage").style.display="none";
+},2000);
+})
+.catch(()=>alert("Booking failed. Try again."));
 }
+   
 </script>
 
 
 
 </body>
 </html>
+
 
 
 
