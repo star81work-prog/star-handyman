@@ -317,70 +317,45 @@ Book Now
     </div>
   </div>
 </div>
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbxRNWY51USAczwRXgt1LxMa-W1M3pSDmAGiqYMdcZrHVEh4vmDSDKNH4SKD5JlnO1JOQw/exec";
 
- <script>
+function submitBooking(e){
+  e.preventDefault();
 
-  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  const service = document.getElementById("hiddenService").value;
+  const form = e.target;
 
-    e.preventDefault();
+  const data = {
+    service: service,
+    name: form[1].value,
+    phone: form[2].value,
+    address: form[3].value,
+    description: form[4].value,
+    date: form[5].value
+  };
 
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    document.getElementById("confirmationMessage").style.display = "block";
+    setTimeout(()=>{
+      document.getElementById("bookingPopup").style.display = "none";
+      document.getElementById("confirmationMessage").style.display = "none";
+      form.reset();
+    },2000);
+  })
+  .catch(error => alert("Error! Try again."));
+}
+</script>
 
-
-    const formData = {
-
-      date: document.getElementById("date").value,
-
-      name: document.getElementById("name").value,
-
-      phone: document.getElementById("phone").value,
-
-      address: document.getElementById("address").value,
-
-      description: document.getElementById("description").value
-
-    };
-
-
-
-    fetch("https://script.google.com/macros/s/AKfycbw1RabjIJwWAiTkm9BMciujuXPpeJgGGWEqIAaRHOEY/dev", {
-
-      method: "POST",
-
-      headers: {
-
-        "Content-Type": "application/json"
-
-      },
-
-      body: JSON.stringify(formData)
-
-    })
-
-    .then(response => response.text())
-
-    .then(data => {
-
-      alert("Booking submitted successfully!");
-
-      document.getElementById("bookingForm").reset();
-
-    })
-
-    .catch(error => {
-
-      alert("Error submitting booking.");
-
-      console.error(error);
-
-    });
-
-  });
-
-  </script>
 
 
 </body>
 </html>
+
 
 
 
