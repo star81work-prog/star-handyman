@@ -24,6 +24,13 @@ text-align:center;
 header h1{font-size:30px;}
     deleted logo
 header p{font-size:20px;margin-top:5px;}
+ nav a {
+color: white;
+text-decoration: none;
+margin-left: 20px;
+font-weight: bold;
+}
+   
 .hero{
 background:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
 url('Star.jpg');
@@ -67,6 +74,9 @@ padding:60px 20px;
 max-width:1100px;
 margin:auto;
 }
+.about{
+    background:#f9f9f9;
+}   
 
 h2{
 text-align:center;
@@ -188,9 +198,8 @@ padding:20px;
 }
 /* MOBILE */
 @media(max-width:768px){
-  .service-box{
-    flex-direction:column;
-    align-items:center;
+  .hero h2{
+    font-size: 28px;
   }
 }
     
@@ -203,6 +212,14 @@ padding:20px;
     <h1>Star Handyman Services</h1>
 
 <p>Reliable • Affordable • Professional</p>
+<nav>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+<a href="tel:5308139404" class="call-btn">Call Now</a>
+</nav>
+       
 </header>
 <div class="hero">  </div>
 
@@ -210,7 +227,14 @@ padding:20px;
 <div class="card">
 <p>Expert TV mounting , furniture assembly and repair, Basic plumbing, Basic electrical, Wall painting and finishing,Door window installation and Fixing minor household issues.</p>
 <a href="tel:7076486070" class="btn">📞 Call Now: 707-648-6070</a>
-</div>    
+</div>   
+<section class="hero">
+<h2>Reliable & Affordable Handyman in Fairfield, CA</h2>
+<p>10+ Years Experience in Home Repairs & Installations</p>
+<button class="btn-primary">Get Free Estimate</button>
+<button class="btn-secondary">Call 530-813-9404</button>
+</section>
+    
 <h2>Our Services</h2>
 <div class="grid">
 <div class="card">
@@ -321,6 +345,12 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
 <img src="furniture.jpeg" alt="Furniture assembly work"width="300">
 </div>
 </section>
+<section class="about">
+<h2>About Me</h2>
+<p>Hi, I'm Abdul Rajack, owner of Star Handyman Services.
+With over 10 years of experience, I proudly serve Fairfield
+and surrounding areas with honest, affordable, and professional service.</p>
+</section>
     
 <section>
 <h2>Service Area</h2>
@@ -350,15 +380,18 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
 <div class="cta">
 <h2>Need a Reliable Handyman Today?</h2>
 <a href="tel:7076486070" class="btn">Call 707-648-6070</a>
+    
 </div>
 
 <footer>
-<p>© 2026 Star Handyman Services | California</p>
+<p> Star Handyman Services | Fairfield, CA</p>
+<p>Phone: 530-813-9404 | Email: star81work@gmail.com</p>
 </footer>
 
 </body>
 
 </html>
+
 
 
 
