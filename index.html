@@ -314,8 +314,9 @@ function submitBooking(e){
   const formData = e.target;
     const formData=new FormData(form);
 fetch(scriptURL,{
-method:"POST",
-body:formData
+method: "POST",
+body: formData
+ mode: "no-cors"
 })
 .then(()=> {
 document.getElementById("confirmationMessage").style.display="block";
@@ -334,6 +335,7 @@ document.getElementById("confirmationMessage").style.display="none";
 
 </body>
 </html>
+
 
 
 
