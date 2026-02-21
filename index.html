@@ -318,6 +318,8 @@ Book Now
 </div>
 
 <script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbzmQ9IbXRAF1cJ2KYbLFDLKf5lJwyqJ1u-WBTeSsR1JGG70PmP_TohermBZE8q3PaoE/exec";
+    
 function openBooking(serviceName){
   document.getElementById("serviceTitle").innerText = serviceName;
   document.getElementById("hiddenService").value = serviceName;
@@ -337,42 +339,9 @@ function submitBooking(e){
   },2000);
 }
 </script>
-<script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbzmQ9IbXRAF1cJ2KYbLFDLKf5lJwyqJ1u-WBTeSsR1JGG70PmP_TohermBZE8q3PaoE/exec";
-
-function submitBooking(e){
-  e.preventDefault();
-
-  const service = document.getElementById("hiddenService").value;
-  const form = e.target;
-
-  const data = {
-    service: service,
-    name: form[1].value,
-    phone: form[2].value,
-    address: form[3].value,
-    description: form[4].value,
-    date: form[5].value
-  };
-
-  fetch(scriptURL, {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
-  .then(response => {
-    document.getElementById("confirmationMessage").style.display = "block";
-    setTimeout(()=>{
-      document.getElementById("bookingPopup").style.display = "none";
-      document.getElementById("confirmationMessage").style.display = "none";
-      form.reset();
-    },2000);
-  })
-  .catch(error => alert("Error! Try again."));
-}
-</script>    
-
 </body>
 </html>
+
 
 
 
