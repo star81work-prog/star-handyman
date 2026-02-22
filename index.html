@@ -284,11 +284,11 @@ padding:20px;
     <h3 id="serviceTitle"></h3>
     <form onsubmit="submitBooking(event)">
       <input type="hidden" id="hiddenService"name="service">
+      <input type="Date" name="Date" required>
       <input type="text" name="Name" placeholder="Name" required>
       <input type="tel" name="Phone" placeholder="Phone" required>
       <input type="text" name="Address" placeholder="Address" required>
       <textarea name="Description" placeholder="Description" required></textarea>
-      <input type="Date" name="Date" required>
       <button type="submit">Submit Booking</button>
     </form>
     <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
@@ -329,6 +329,7 @@ document.getElementById("confirmationMessage").style.display="none";
 </script>
 </body>
 </html>
+
 
 
 
