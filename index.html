@@ -311,7 +311,7 @@ function submitBooking(e){
   e.preventDefault();
   const form = e.target;
     const formData=new FormData(form);
-fetch("https://script.google.com/macros/s/AKfycbw1RabjIJwWAiTkm9BMciujuXPpeJgGGWEqIAaRHOEY/dev",{
+fetch("https://script.google.com/macros/s/AKfycbxbUliBRulo20Xgka64FY8nqW6e32R4LEwO1TMjUOBuD4kRBQopwUf-AAhR34uSPMGsSg/exec",{
 method: "POST",
 body: formData,
  mode: "no-cors"
@@ -329,6 +329,7 @@ document.getElementById("confirmationMessage").style.display="none";
 </script>
 </body>
 </html>
+
 
 
 
