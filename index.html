@@ -24,19 +24,86 @@ text-align:center;
 header h1{font-size:30px;}
 header p{font-size:20px;margin-top:5px;}
 
-nav a {
-color: white;
-text-decoration: none;
-margin-left: 20px;
-font-weight: bold;
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d1b2a;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
+/* Logo */
+.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
 
-nav a:hover{
-    background-color:#e36414;
-    border-radius: 5px;
-}    
-   
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #fca311;
+}
+
+/* Call Button */
+.call-btn {
+  background: #fca311;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.call-btn:hover {
+  background: #ffba42;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: #0d1b2a;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
 .hero{
 background:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
 url('3rd pic.jpg');
@@ -188,23 +255,17 @@ padding:20px;
     <h1>Star Handyman Services</h1>
 
 <p>Reliable • Affordable • Professional</p>
- <ul class="nav-service">
-  <li class="nav-task">
-   <a href="#" class="nav-link">Home</a>
-  </li>
-  <li class="nav-task">
-   <a href="#" class="nav-link">Service</a>
-  </li>
-  <li class="nav-task">
-   <a href="#" class="nav-link">Gallery</a>
-  </li>
-  <li class="nav-task">
-   <a href="#" class="nav-link">About</a>
-  </li>
-  <li class="nav-task">
-   <a href="#" class="nav-link">Contact</a>
-  </li>
+<!--Navigation Bar-->
+ <nav class="navbar">
+     <div class="logo">Star Handyman Services</div>
+ <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
  </ul>
+ <div class="menu-toggle" onclick="toggleMenu()"></div>  
 <a href="tel:7076486070" class="btn">📞 Call Now</a>
 </nav>
 </header>     
@@ -283,9 +344,15 @@ padding:20px;
 <p> Email: star81work@gmail.com</p>
 </footer>
   </div>
-</div>
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+</script>
 </body>
 </html>
+
 
 
 
