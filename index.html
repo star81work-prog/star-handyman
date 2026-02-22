@@ -208,37 +208,30 @@ padding:20px;
 <div class="card">    
 <h3>TV Mounting</h3>
 <p>Secure and perfect alignment with stud detection, safe drilling and soundbar mounting available.</p>
-<button onclick="openBooking('TV Mounting')">Book Now</button>
 </div>    
 <div class="card">    
 <h3>Hang Art, Mirror & Decor</h3>
 <p>Secure and perfectly aligned mounting for apartments and homes.</p>
-<button onclick="openBooking('Hang Art, Mirror & Decor')">Book Now</button>
 </div>
 <div class="card">
 <h3>Furniture Assembly</h3>
 <p>Fast and professional assembly for all furniture types.</p>
-<button onclick="openBooking('Furniture Assembly')">Book Now</button>
 </div>
 <div class="card">
 <h3>Home Repairs</h3>
 <p>Doors, drywall patching, fixture replacement and minor repairs.</p>
-<button onclick="openBooking('Home Repairs')">Book Now</button>
 </div>
 <div class="card">
 <h3>Apartment Maintenance</h3>
 <p>Reliable services for tenants and property managers.</p>
-<button onclick="openBooking('Apartment Maintenance')">Book Now</button>    
 </div>
 <div class="card">
 <h3>Install Blinds</h3>
 <p>Secure and Perfect Fixing.</p>
-<button onclick="openBooking('Install Blinds')">Book Now</button>
 </div>
 <div class="card">
 <h3>General Mounting</h3>
 <p>Secure and Perfect aligned mounting</p>
-<button onclick="openBooking('General Mounting')">Book Now</button>
 </div>
 </div> 
 </section>
@@ -276,59 +269,11 @@ padding:20px;
 <p>Star Handyman Services | Fairfield, CA</p>
 <p> Email: star81work@gmail.com</p>
 </footer>
-
-
-<div id="bookingPopup" class="popup">
-  <div class="popup-content">
-    <span class="close" onclick="closeBooking()">&times;</span>
-    <h3 id="serviceTitle"></h3>
-    <form onsubmit="submitBooking(event)">
-      <input type="hidden" id="hiddenService"name="service">
-      <input type="Date" name="Date" required>
-      <input type="text" name="Name" placeholder="Name" required>
-      <input type="tel" name="Phone" placeholder="Phone" required>
-      <input type="text" name="Address" placeholder="Address" required>
-      <textarea name="Description" placeholder="Description" required></textarea>
-      <button type="submit">Submit Booking</button>
-    </form>
-    <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
-      ✅ Booking received! We will contact you soon.
-    </div>
   </div>
 </div>
-<script>
-function openBooking(service){
-document.getElementById("bookingPopup").style.display="block";
-document.getElementById("serviceTitle").innerText=service;
-document.getElementById("hiddenService").value=service;
-}
-
-function closeBooking(){
-document.getElementById("bookingPopup").style.display="none";
-}
-    
-function submitBooking(e){
-  e.preventDefault();
-  const form = e.target;
-    const formData=new FormData(form);
-fetch("https://script.google.com/macros/s/AKfycbxbUliBRulo20Xgka64FY8nqW6e32R4LEwO1TMjUOBuD4kRBQopwUf-AAhR34uSPMGsSg/exec",{
-method: "POST",
-body: formData,
- mode: "no-cors"
-})
-.then(()=> {
-document.getElementById("confirmationMessage").style.display="block";
-setTimeout(()=>{
-closeBooking();
-form.reset();
-document.getElementById("confirmationMessage").style.display="none";
-},2000);
-})
-.catch(()=>alert("Booking failed. Try again."));
-}
-</script>
 </body>
 </html>
+
 
 
 
