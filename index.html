@@ -184,8 +184,6 @@ height:200px;
 object-fit:cover;
 border-radius: 10px;
 }    
-
-}   
 .cta{
 background:#2563eb;
 color:white;
@@ -257,14 +255,14 @@ padding:20px;
 <p>Reliable • Affordable • Professional</p>
 <!--Navigation Bar-->
  <nav class="navbar">
- <ul class="nav-links">
+ <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
  </ul>
- <div class="menu-toggle" onclick="toggleMenu()"></div>  
+ <div class="menu-toggle" onclick="toggleMenu()">☰</div>  
 <a href="tel:7076486070" class="btn">📞 Call Now</a>
 </nav>
 </header>     
@@ -382,7 +380,7 @@ padding:20px;
   </div>
 <script>
 function toggleMenu() {
-  const nav = document.getElementById("navLinks");
+  const nav = document.getElementById("nav-Links");
   nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
 function openBooking(service){
@@ -403,22 +401,18 @@ const formData=new FormData(form);
 fetch("https://script.google.com/macros/s/AKfycbxbUliBRulo20Xgka64FY8nqW6e32R4LEwO1TMjUOBuD4kRBQopwUf-AAhR34uSPMGsSg/exec",{
 method:"POST",
 body:formData
-})
-.then(res=>res.json())
-.then(data=>{
-if(data.result==="success"){
+});
 document.getElementById("confirmationMessage").style.display="block";
-form.reset();
-}
-else{
-alert("Error submitting booking.");
-}
-})
-.catch(()=>alert("Submission failed."));
-}
+setTimeout(()=>{
+closeBooking();
+document.getElementById("confirmationMessage").style.display="none";
+e.target.reset();
+},2000);
+}  
 </script>
 </body>
 </html>
+
 
 
 
