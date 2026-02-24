@@ -361,8 +361,45 @@ function toggleMenu() {
   nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
 </script>
+<script>
+  function doPost(e) {
+  try {
+    // Get fields
+    const data = e.parameter; // includes service, name, phone, date, etc.
+
+    // Open your sheet (replace with your Sheet ID + sheet name)
+    const ss = SpreadsheetApp.openById("AKfycbxbUliBRulo20Xgka64FY8nqW6e32R4LEwO1TMjUOBuD4kRBQopwUf-AAhR34uSPMGsSg");
+    const sheet = ss.getSheetByName("Bookings");
+
+    // Add header row once (optional)
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow(["Timestamp", "Service", "Name", "Phone", "Date"]);
+    }
+
+    // Save row
+    sheet.appendRow([
+      new Date(),
+      data.service || "",
+      data.name || "",
+      data.phone || "",
+      data.date || ""
+    ]);
+
+    // Return JSON
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: false, error: String(err) }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+</script> 
 </body>
 </html>
+
 
 
 
