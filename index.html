@@ -280,32 +280,69 @@ padding:20px;
     
 <div class="card">    
 <h3>TV Mounting</h3>
-<p>Secure and perfect alignment with stud detection, safe drilling and soundbar mounting available.</p>
+<p>Secure and perfect alignment with stud detection, safe drilling and soundbar mounting available.</p>  
+<button onclick="openbooking('TV Mounting')">
+Book Now
+</button>  
 </div>    
 <div class="card">    
 <h3>Hang Art, Mirror & Decor</h3>
 <p>Secure and perfectly aligned mounting for apartments and homes.</p>
+<button onclick="openbooking('Hang Art, Mirror & Decor')">
+Book Now
+</button>   
 </div>
 <div class="card">
 <h3>Furniture Assembly</h3>
 <p>Fast and professional assembly for all furniture types.</p>
+<button onclick="openbooking('Furniture Assembly')">
+Book Now
+</button>   
 </div>
 <div class="card">
 <h3>Home Repairs</h3>
 <p>Doors, drywall patching, fixture replacement and minor repairs.</p>
+<button onclick="openbooking('Home Repairs')"> 
+Book Now
+</button>   
 </div>
 <div class="card">
 <h3>Apartment Maintenance</h3>
 <p>Reliable services for tenants and property managers.</p>
+<button onclick="openbooking('Apartment Maintenance')">
+Book Now
+</button>   
 </div>
 <div class="card">
 <h3>Install Blinds</h3>
 <p>Secure and Perfect Fixing.</p>
+<button onclick="openbooking('Install Blinds')"> 
+Book Now
+</button>   
 </div>
 <div class="card">
 <h3>General Mounting</h3>
 <p>Secure and Perfect aligned mounting</p>
+<button onclick="openbooking('General Mounting')"> 
+Book Now
+</button>   
 </div>
+ <div id="bookingPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h3 id="serviceTitle"></h3>
+    <form onsubmit="submitBooking(event)">
+      <input type="hidden" id="hiddenService"name="service">
+      <textarea name="Service" placeholder="Service" required></textarea>
+      <input type="Date" name="Date" required>
+      <input type="text" name="Name" placeholder="Name" required>
+      <input type="tel" name="Phone" placeholder="Phone" required>
+      <input type="text" name="Address" placeholder="Address" required>
+      <button type="submit">Submit Booking</button>
+    </form>
+    <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
+      ✅ Booking received! We will contact you soon.
+    </div> 
 </div> 
 </section>
  
@@ -365,7 +402,7 @@ function toggleMenu() {
   function doPost(e) {
   try {
     // Get fields
-    const data = e.parameter; // includes service, name, phone, date, etc.
+    const data = e.parameter; // includes service, name, phone, address, date, etc.
 
     // Open your sheet (replace with your Sheet ID + sheet name)
     const ss = SpreadsheetApp.openById("AKfycbxbUliBRulo20Xgka64FY8nqW6e32R4LEwO1TMjUOBuD4kRBQopwUf-AAhR34uSPMGsSg");
@@ -373,7 +410,7 @@ function toggleMenu() {
 
     // Add header row once (optional)
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Timestamp", "Service", "Name", "Phone", "Date"]);
+      sheet.appendRow(["Timestamp", "Service", "Name", "Phone", "Address", "Date"]);
     }
 
     // Save row
@@ -382,6 +419,7 @@ function toggleMenu() {
       data.service || "",
       data.name || "",
       data.phone || "",
+      data.address || "",
       data.date || ""
     ]);
 
@@ -399,6 +437,7 @@ function toggleMenu() {
 </script> 
 </body>
 </html>
+
 
 
 
