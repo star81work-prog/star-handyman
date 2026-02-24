@@ -364,6 +364,7 @@ padding:20px;
     <span class="close" onclick="closeBooking()">&times;</span>
     <h3 id="serviceTitle"></h3>
     <form onsubmit="submitBooking(event)">
+      <input type="hidden" name="service" id="hiddenService">
       <input type="date" name="date" required/>
       <input type="text" name="name" placeholder="Your Name" required/>
       <input type="tel" name="phone" placeholder="Phone Number" required/>
@@ -384,7 +385,9 @@ function toggleMenu() {
 }
 function openBooking(service){
 document.getElementById("bookingPopup").style.display="block";
-document.getElementById("serviceTitle").innerText=service;}
+document.getElementById("serviceTitle").innerText=service;
+document.getElementById("hiddenService").value=service;
+}
 function closeBooking(){
 document.getElementById("bookingPopup").style.display="none";
 }
@@ -397,6 +400,7 @@ e.target.reset();
 </script>
 </body>
 </html>
+
 
 
 
