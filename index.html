@@ -379,14 +379,13 @@ padding:20px;
   </div>
 <script>
 function toggleMenu() {
-  const nav = document.getElementById("nav-Links");
+  const nav = document.getElementById("navLinks");
   nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
 function openBooking(service){
 document.getElementById("bookingPopup").style.display="block";
 document.getElementById("serviceTitle").innerText=service;
-document.getElementById("hiddenService").value=service;
-
+}
 function closeBooking(){
 document.getElementById("bookingPopup").style.display="none";
 }
@@ -400,6 +399,7 @@ e.target.reset();
 </script>
 </body>
 </html>
+
 
 
 
