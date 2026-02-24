@@ -390,8 +390,24 @@ document.getElementById("hiddenService").value=service;
 function closeBooking(){
 document.getElementById("bookingPopup").style.display="none";
 }
+
+/* Sends data to Google sheets*/  
 function submitBooking(e){
 e.preventDefault();
+ const scriptURL = "https://script.google.com/macros/s/AKfycbxbUliBRulo20Xgka64FY8nqW6e32R4LEwO1TMjUOBuD4kRBQopwUf-AAhR34uSPMGsSg/exec";  // ← paste  Apps Script Web App URL
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(response => {
+    console.log("Success!", response);
+  
+//Show confirmation message  
 document.getElementById("confirmationMessage").style.display="block";
 setTimeout(()=>{
 closeBooking();
@@ -402,6 +418,7 @@ e.target.reset();
 </script>
 </body>
 </html>
+
 
 
 
