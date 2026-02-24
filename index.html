@@ -364,12 +364,11 @@ padding:20px;
     <span class="close" onclick="closeBooking()">&times;</span>
     <h3 id="serviceTitle"></h3>
     <form onsubmit="submitBooking(event)">
-      <input type="hidden" id="hiddenService"name="service">
-      <input type="Date" name="date" required>
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="tel" name="phone" placeholder="Phone" required>
-      <input type="text" name="address" placeholder="Address" required>
-      <textarea name="description" placeholder="Describe the job" required></textarea>
+      <input type="date" name="date" required/>
+      <input type="text" name="name" placeholder="Your Name" required/>
+      <input type="tel" name="phone" placeholder="Phone Number" required/>
+      <input type="text" name="address" placeholder="Address" required/>
+      <textarea name="description" placeholder="Description"></textarea>
       
       <button type="submit">Submit Booking</button>
     </form>
@@ -383,35 +382,37 @@ function toggleMenu() {
   const nav = document.getElementById("nav-Links");
   nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
-function openBooking(service){
-document.getElementById("bookingPopup").style.display="block";
-document.getElementById("serviceTitle").innerText=service;
-document.getElementById("hiddenService").value=service;
-}
+const form = document.getElementById("bookingForm");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-function closeBooking(){
-document.getElementById("bookingPopup").style.display="none";
-}
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
 
-function submitBooking(e){
-e.preventDefault();
-const form=e.target;
-const formData=new FormData(form);
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbw1RabjIJwWAiTkm9BMciujuXPpeJgGGWEqIAaRHOEY/dev", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
 
-fetch("https://script.google.com/macros/s/AKfycbxbUliBRulo20Xgka64FY8nqW6e32R4LEwO1TMjUOBuD4kRBQopwUf-AAhR34uSPMGsSg/exec",{
-method:"POST",
-body:formData
+    const result = await response.json();
+
+    if(result.result === "success") {
+      alert("Booking submitted successfully!");
+      form.reset();
+    } else {
+      alert("Error: " + result.message);
+    }
+  } catch (err) {
+    alert("Request failed: " + err);
+  }
 });
-document.getElementById("confirmationMessage").style.display="block";
-setTimeout(()=>{
-closeBooking();
-document.getElementById("confirmationMessage").style.display="none";
-e.target.reset();
-},2000);
-}  
+
 </script>
 </body>
 </html>
+
 
 
 
