@@ -366,11 +366,10 @@ padding:20px;
     <form onsubmit="submitBooking(event)">
       <input type="hidden" name="service" id="hiddenService">
       <input type="date" name="date" required/>
-      <input type="text" name="name" placeholder="Your Name" required/>
-      <input type="tel" name="phone" placeholder="Phone Number" required/>
-      <input type="text" name="address" placeholder="Address" required/>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="address" placeholder="Address" required>
       <textarea name="description" placeholder="Description"></textarea>
-      
       <button type="submit">Submit Booking</button>
     </form>
     <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
@@ -391,15 +390,19 @@ document.getElementById("hiddenService").value=service;
 function closeBooking(){
 document.getElementById("bookingPopup").style.display="none";
 }
+function submitBooking(e){
+e.preventDefault();
 document.getElementById("confirmationMessage").style.display="block";
 setTimeout(()=>{
 closeBooking();
 document.getElementById("confirmationMessage").style.display="none";
 e.target.reset();
 },2000); 
+}  
 </script>
 </body>
 </html>
+
 
 
 
