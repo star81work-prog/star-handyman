@@ -414,10 +414,16 @@ closeBooking();
 document.getElementById("confirmationMessage").style.display="none";
 e.target.reset();
 },2000); 
+})
+  .catch(error => {
+    console.error("Error!", error);
+    alert("There was an error submitting your booking.");
+  });    
 }  
 </script>
 </body>
 </html>
+
 
 
 
