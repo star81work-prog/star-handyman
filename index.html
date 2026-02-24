@@ -385,7 +385,7 @@ function toggleMenu() {
 function openBooking(service){
 document.getElementById("bookingPopup").style.display="block";
 document.getElementById("serviceTitle").innerText=service;
-}
+
 function closeBooking(){
 document.getElementById("bookingPopup").style.display="none";
 }
@@ -394,11 +394,12 @@ setTimeout(()=>{
 closeBooking();
 document.getElementById("confirmationMessage").style.display="none";
 e.target.reset();
-},2000);
+},2000);}
 }   
 </script>
 </body>
 </html>
+
 
 
 
