@@ -1,0 +1,1473 @@
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Star Handyman Services in California. Professional wall picture installation, furniture assembly, and home repairs. Call 707-648-6070 today.">
+<meta name="keywords" content="Handyman California, Wall Mounting, Furniture Assembly, Apartment Repairs">
+
+<title>Star Handyman Services</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+
+body{background:#f4f6f9;color:#333;line-height:1.6;}
+
+header{
+background:#0f172a;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{font-size:30px;}
+header p{font-size:20px;margin-top:5px;}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d1b2a;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #fca311;
+}
+
+/* Call Button */
+.call-btn {
+  background: #fca311;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.call-btn:hover {
+  background: #ffba42;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: #0d1b2a;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.hero{
+background:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+url('3rd pic.jpg');
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:200px 10px;
+}
+
+.hero h2{font-size:38px;margin-bottom:20px;}
+.hero p{font-size:18px;margin-bottom:30px;}
+
+.btn{
+display:inline-block;
+background:#2563eb;
+color:white;
+padding:14px 28px;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+margin:5px;    
+}
+.btn:hover{
+    background:#e36414;
+}
+    
+section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}   
+h2{
+text-align:center;
+margin-bottom:20px;
+color:#0f172a;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+text-align:center;
+}
+    
+.card button{
+  margin-top:15px;
+  padding:10px 15px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.card button:hover{
+  background:#e36414;
+}   
+
+.gallery{
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+justify-content:center;    
+}
+
+.gallery img{
+width:300px;
+height:200px;
+object-fit:cover;
+border-radius: 10px;
+}    
+.cta{
+background:#2563eb;
+color:white;
+text-align:center;
+padding:40px 20px;
+}    
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+}  
+
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:1000;	 
+}
+
+.popup-content{
+    background:white;
+    padding:20px;
+    width:90%;
+    max-width:400px;
+    margin:10% auto;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    gap:10px; 
+}
+ .popup-content input,
+.popup-content textarea{
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.popup-content button{
+    padding:10px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;   
+}
+.close{
+    text-align:right;
+    cursor:pointer;
+    font-size:20px;
+}    
+
+@media(max-width:768px){
+  .hero h2{font-size: 28px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Star Handyman Services</h1>
+
+<p>Reliable • Affordable • Professional</p>
+<!--Navigation Bar-->
+ <nav class="navbar">
+ <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+ </ul>
+ <div class="menu-toggle" onclick="toggleMenu()">☰</div>  
+<a href="tel:7076486070" class="btn">📞 Call Now</a>
+</nav>
+</header>     
+    
+<div class="hero" id="home">      
+<h2>Reliable & Affordable Handyman in Fairfield, CA</h2>
+<p>10+ Years Experience in Home Repairs & Installations</p>
+</div>
+    
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+    
+<div class="card">    
+<h3>TV Mounting</h3>
+<p>Secure and perfect alignment with stud detection, safe drilling and soundbar mounting available.</p>  
+<button onclick="openBooking('TV Mounting')">Book Now</button>  
+</div>    
+<div class="card">    
+<h3>Hang Art, Mirror & Decor</h3>
+<p>Secure and perfectly aligned mounting for apartments and homes.</p>
+<button onclick="openBooking('Hang Art, Mirror & Decor')">Book Now</button>   
+</div>
+<div class="card">
+<h3>Furniture Assembly</h3>
+<p>Fast and professional assembly for all furniture types.</p>
+<button onclick="openBooking('Furniture Assembly')">Book Now</button>   
+</div>
+<div class="card">
+<h3>Home Repairs</h3>
+<p>Doors, drywall patching, fixture replacement and minor repairs.</p>
+<button onclick="openBooking('Home Repairs')"> Book Now</button>   
+</div>
+<div class="card">
+<h3>Apartment Maintenance</h3>
+<p>Reliable services for tenants and property managers.</p>
+<button onclick="openBooking('Apartment Maintenance')">Book Now</button>   
+</div>
+<div class="card">
+<h3>Install Blinds</h3>
+<p>Secure and Perfect Fixing.</p>
+<button onclick="openBooking('Install Blinds')"> Book Now</button>   
+</div>
+<div class="card">
+<h3>General Mounting</h3>
+<p>Secure and Perfect aligned mounting</p>
+<button onclick="openBooking('General Mounting')"> Book Now</button>   
+</div>
+</section>
+ <section id="gallery">    
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="light.jpeg" alt="Light installation "width="300">
+<img src="fan.jpeg" alt="Ceiling fan installation "width="300">
+<img src="bed-frame.jpeg" alt="Furniture assembly work"width="300">
+<img src="dressing-table.jpeg" alt="Furniture assembly work"width="300">
+<img src="drawer.JPG" alt="Furniture assembly work"width="300">
+<img src="furniture.jpeg" alt="Furniture assembly work"width="300">
+<img src="pic1.jpeg" alt="Our work"width="300">  
+<img src="pic2.jpeg" alt="Our work"width="300">  
+<img src="pic3.jpeg" alt="Our work"width="300">  
+<img src="pic4.jpeg" alt="Our work"width="300">  
+<img src="pic5.jpeg" alt="Our work"width="300">  
+<img src="pic6.jpeg" alt="Our work"width="300">  
+<img src="pic7.jpeg" alt="Our work"width="300">  
+<img src="pic8.jpeg" alt="Our work"width="300">  
+<img src="pic9.jpeg" alt="Our work"width="300">  
+<img src="pic10.jpeg" alt="Our work"width="300">  
+<img src="pic11.jpeg" alt="Our work"width="300">  
+<img src="pic12.jpeg" alt="Our work"width="300">  
+</div>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<p>Over 10 years of professional handyman experience serving Fairfield and surrounding areas.</p>
+</section>  
+    
+<section>
+<h2>Service Area</h2>
+<div class="card">
+<p>Serving Fairfield, Vacaville, Dixon, Davis, Napa, Sonoma, Vallejo and surrounding areas. Same-day appointments available.</p>
+</div>
+</section>
+    
+<div class="cta">
+<h2>Need a Reliable Handyman Today?</h2>
+<a href="tel:7076486070" class="btn">Call 707-648-6070</a>
+</div>
+
+<footer id="contact">
+<p>Star Handyman Services | Fairfield, CA</p>
+<p> Email: star81work@gmail.com</p>
+</footer>
+
+ <!--BOOKING POPUP--> 
+ <div id="bookingPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h3 id="serviceTitle"></h3>
+    <form onsubmit="submitBooking(event)">
+      <input type="hidden" name="service" id="hiddenService">
+      <input type="date" name="date" required>
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="text" name="address" placeholder="Address" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+    <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
+      ✅ Booking received! We will contact you soon.
+    </div> 
+</div> 
+  </div>
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+function openBooking(service){
+document.getElementById("bookingPopup").style.display="block";
+document.getElementById("serviceTitle").innerText=service;
+document.getElementById("hiddenService").value=service;
+}
+function closeBooking(){
+document.getElementById("bookingPopup").style.display="none";
+}
+
+/* Sends data to Google sheets*/  
+function submitBooking(e){
+e.preventDefault();
+ const scriptURL = "https://script.google.com/macros/s/AKfycbyIF7XTj8JIg7PnpZ4lYtdDVjOx96gIfjN3h_Ar9w3eCwbPK7EAHmflaZT2RGWeTVnxhA/exec";  // ← paste  Apps Script Web App URL
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(response => {
+    console.log("Success!", response);
+  
+//Show confirmation message  
+document.getElementById("confirmationMessage").style.display="block";
+setTimeout(()=>{
+closeBooking();
+document.getElementById("confirmationMessage").style.display="none";
+e.target.reset();
+},2000); 
+})
+  .catch(error => {
+    console.error("Error!", error);
+    alert("There was an error submitting your booking.");
+  });    
+}  
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Star Handyman Services in California. Professional wall picture installation, furniture assembly, and home repairs. Call 707-648-6070 today.">
+<meta name="keywords" content="Handyman California, Wall Mounting, Furniture Assembly, Apartment Repairs">
+
+<title>Star Handyman Services</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+
+body{background:#f4f6f9;color:#333;line-height:1.6;}
+
+header{
+background:#0f172a;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{font-size:30px;}
+header p{font-size:20px;margin-top:5px;}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d1b2a;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #fca311;
+}
+
+/* Call Button */
+.call-btn {
+  background: #fca311;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.call-btn:hover {
+  background: #ffba42;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: #0d1b2a;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.hero{
+background:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+url('3rd pic.jpg');
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:200px 10px;
+}
+
+.hero h2{font-size:38px;margin-bottom:20px;}
+.hero p{font-size:18px;margin-bottom:30px;}
+
+.btn{
+display:inline-block;
+background:#2563eb;
+color:white;
+padding:14px 28px;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+margin:5px;    
+}
+.btn:hover{
+    background:#e36414;
+}
+    
+section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}   
+h2{
+text-align:center;
+margin-bottom:20px;
+color:#0f172a;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+text-align:center;
+}
+    
+.card button{
+  margin-top:15px;
+  padding:10px 15px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.card button:hover{
+  background:#e36414;
+}   
+
+.gallery{
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+justify-content:center;    
+}
+
+.gallery img{
+width:300px;
+height:200px;
+object-fit:cover;
+border-radius: 10px;
+}    
+.cta{
+background:#2563eb;
+color:white;
+text-align:center;
+padding:40px 20px;
+}    
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+}  
+
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:1000;	 
+}
+
+.popup-content{
+    background:white;
+    padding:20px;
+    width:90%;
+    max-width:400px;
+    margin:10% auto;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    gap:10px; 
+}
+ .popup-content input,
+.popup-content textarea{
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.popup-content button{
+    padding:10px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;   
+}
+.close{
+    text-align:right;
+    cursor:pointer;
+    font-size:20px;
+}    
+
+@media(max-width:768px){
+  .hero h2{font-size: 28px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Star Handyman Services</h1>
+
+<p>Reliable • Affordable • Professional</p>
+<!--Navigation Bar-->
+ <nav class="navbar">
+ <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+ </ul>
+ <div class="menu-toggle" onclick="toggleMenu()">☰</div>  
+<a href="tel:7076486070" class="btn">📞 Call Now</a>
+</nav>
+</header>     
+    
+<div class="hero" id="home">      
+<h2>Reliable & Affordable Handyman in Fairfield, CA</h2>
+<p>10+ Years Experience in Home Repairs & Installations</p>
+</div>
+    
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+    
+<div class="card">    
+<h3>TV Mounting</h3>
+<p>Secure and perfect alignment with stud detection, safe drilling and soundbar mounting available.</p>  
+<button onclick="openBooking('TV Mounting')">Book Now</button>  
+</div>    
+<div class="card">    
+<h3>Hang Art, Mirror & Decor</h3>
+<p>Secure and perfectly aligned mounting for apartments and homes.</p>
+<button onclick="openBooking('Hang Art, Mirror & Decor')">Book Now</button>   
+</div>
+<div class="card">
+<h3>Furniture Assembly</h3>
+<p>Fast and professional assembly for all furniture types.</p>
+<button onclick="openBooking('Furniture Assembly')">Book Now</button>   
+</div>
+<div class="card">
+<h3>Home Repairs</h3>
+<p>Doors, drywall patching, fixture replacement and minor repairs.</p>
+<button onclick="openBooking('Home Repairs')"> Book Now</button>   
+</div>
+<div class="card">
+<h3>Apartment Maintenance</h3>
+<p>Reliable services for tenants and property managers.</p>
+<button onclick="openBooking('Apartment Maintenance')">Book Now</button>   
+</div>
+<div class="card">
+<h3>Install Blinds</h3>
+<p>Secure and Perfect Fixing.</p>
+<button onclick="openBooking('Install Blinds')"> Book Now</button>   
+</div>
+<div class="card">
+<h3>General Mounting</h3>
+<p>Secure and Perfect aligned mounting</p>
+<button onclick="openBooking('General Mounting')"> Book Now</button>   
+</div>
+</section>
+ <section id="gallery">    
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="light.jpeg" alt="Light installation "width="300">
+<img src="fan.jpeg" alt="Ceiling fan installation "width="300">
+<img src="bed-frame.jpeg" alt="Furniture assembly work"width="300">
+<img src="dressing-table.jpeg" alt="Furniture assembly work"width="300">
+<img src="drawer.JPG" alt="Furniture assembly work"width="300">
+<img src="furniture.jpeg" alt="Furniture assembly work"width="300">
+<img src="pic1.jpeg" alt="Our work"width="300">  
+<img src="pic2.jpeg" alt="Our work"width="300">  
+<img src="pic3.jpeg" alt="Our work"width="300">  
+<img src="pic4.jpeg" alt="Our work"width="300">  
+<img src="pic5.jpeg" alt="Our work"width="300">  
+<img src="pic6.jpeg" alt="Our work"width="300">  
+<img src="pic7.jpeg" alt="Our work"width="300">  
+<img src="pic8.jpeg" alt="Our work"width="300">  
+<img src="pic9.jpeg" alt="Our work"width="300">  
+<img src="pic10.jpeg" alt="Our work"width="300">  
+<img src="pic11.jpeg" alt="Our work"width="300">  
+<img src="pic12.jpeg" alt="Our work"width="300">  
+</div>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<p>Over 10 years of professional handyman experience serving Fairfield and surrounding areas.</p>
+</section>  
+    
+<section>
+<h2>Service Area</h2>
+<div class="card">
+<p>Serving Fairfield, Vacaville, Dixon, Davis, Napa, Sonoma, Vallejo and surrounding areas. Same-day appointments available.</p>
+</div>
+</section>
+    
+<div class="cta">
+<h2>Need a Reliable Handyman Today?</h2>
+<a href="tel:7076486070" class="btn">Call 707-648-6070</a>
+</div>
+
+<footer id="contact">
+<p>Star Handyman Services | Fairfield, CA</p>
+<p> Email: star81work@gmail.com</p>
+</footer>
+
+ <!--BOOKING POPUP--> 
+ <div id="bookingPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h3 id="serviceTitle"></h3>
+    <form onsubmit="submitBooking(event)">
+      <input type="hidden" name="service" id="hiddenService">
+      <input type="date" name="date" required>
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="text" name="address" placeholder="Address" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+    <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
+      ✅ Booking received! We will contact you soon.
+    </div> 
+</div> 
+  </div>
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+function openBooking(service){
+document.getElementById("bookingPopup").style.display="block";
+document.getElementById("serviceTitle").innerText=service;
+document.getElementById("hiddenService").value=service;
+}
+function closeBooking(){
+document.getElementById("bookingPopup").style.display="none";
+}
+
+/* Sends data to Google sheets*/  
+function submitBooking(e){
+e.preventDefault();
+ const scriptURL = "https://script.google.com/macros/s/AKfycbyIF7XTj8JIg7PnpZ4lYtdDVjOx96gIfjN3h_Ar9w3eCwbPK7EAHmflaZT2RGWeTVnxhA/exec";  // ← paste  Apps Script Web App URL
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(response => {
+    console.log("Success!", response);
+  
+//Show confirmation message  
+document.getElementById("confirmationMessage").style.display="block";
+setTimeout(()=>{
+closeBooking();
+document.getElementById("confirmationMessage").style.display="none";
+e.target.reset();
+},2000); 
+})
+  .catch(error => {
+    console.error("Error!", error);
+    alert("There was an error submitting your booking.");
+  });    
+}  
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Star Handyman Services in California. Professional wall picture installation, furniture assembly, and home repairs. Call 707-648-6070 today.">
+<meta name="keywords" content="Handyman California, Wall Mounting, Furniture Assembly, Apartment Repairs">
+
+<title>Star Handyman Services</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+
+body{background:#f4f6f9;color:#333;line-height:1.6;}
+
+header{
+background:#0f172a;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{font-size:30px;}
+header p{font-size:20px;margin-top:5px;}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d1b2a;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #fca311;
+}
+
+/* Call Button */
+.call-btn {
+  background: #fca311;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.call-btn:hover {
+  background: #ffba42;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: #0d1b2a;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.hero{
+background:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+url('3rd pic.jpg');
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:200px 10px;
+}
+
+.hero h2{font-size:38px;margin-bottom:20px;}
+.hero p{font-size:18px;margin-bottom:30px;}
+
+.btn{
+display:inline-block;
+background:#2563eb;
+color:white;
+padding:14px 28px;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+margin:5px;    
+}
+.btn:hover{
+    background:#e36414;
+}
+    
+section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}   
+h2{
+text-align:center;
+margin-bottom:20px;
+color:#0f172a;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+text-align:center;
+}
+    
+.card button{
+  margin-top:15px;
+  padding:10px 15px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.card button:hover{
+  background:#e36414;
+}   
+
+.gallery{
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+justify-content:center;    
+}
+
+.gallery img{
+width:300px;
+height:200px;
+object-fit:cover;
+border-radius: 10px;
+}    
+.cta{
+background:#2563eb;
+color:white;
+text-align:center;
+padding:40px 20px;
+}    
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+}  
+
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:1000;	 
+}
+
+.popup-content{
+    background:white;
+    padding:20px;
+    width:90%;
+    max-width:400px;
+    margin:10% auto;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    gap:10px; 
+}
+ .popup-content input,
+.popup-content textarea{
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.popup-content button{
+    padding:10px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;   
+}
+.close{
+    text-align:right;
+    cursor:pointer;
+    font-size:20px;
+}    
+
+@media(max-width:768px){
+  .hero h2{font-size: 28px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Star Handyman Services</h1>
+
+<p>Reliable • Affordable • Professional</p>
+<!--Navigation Bar-->
+ <nav class="navbar">
+ <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+ </ul>
+ <div class="menu-toggle" onclick="toggleMenu()">☰</div>  
+<a href="tel:7076486070" class="btn">📞 Call Now</a>
+</nav>
+</header>     
+    
+<div class="hero" id="home">      
+<h2>Reliable & Affordable Handyman in Fairfield, CA</h2>
+<p>10+ Years Experience in Home Repairs & Installations</p>
+</div>
+    
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+    
+<div class="card">    
+<h3>TV Mounting</h3>
+<p>Secure and perfect alignment with stud detection, safe drilling and soundbar mounting available.</p>  
+<button onclick="openBooking('TV Mounting')">Book Now</button>  
+</div>    
+<div class="card">    
+<h3>Hang Art, Mirror & Decor</h3>
+<p>Secure and perfectly aligned mounting for apartments and homes.</p>
+<button onclick="openBooking('Hang Art, Mirror & Decor')">Book Now</button>   
+</div>
+<div class="card">
+<h3>Furniture Assembly</h3>
+<p>Fast and professional assembly for all furniture types.</p>
+<button onclick="openBooking('Furniture Assembly')">Book Now</button>   
+</div>
+<div class="card">
+<h3>Home Repairs</h3>
+<p>Doors, drywall patching, fixture replacement and minor repairs.</p>
+<button onclick="openBooking('Home Repairs')"> Book Now</button>   
+</div>
+<div class="card">
+<h3>Apartment Maintenance</h3>
+<p>Reliable services for tenants and property managers.</p>
+<button onclick="openBooking('Apartment Maintenance')">Book Now</button>   
+</div>
+<div class="card">
+<h3>Install Blinds</h3>
+<p>Secure and Perfect Fixing.</p>
+<button onclick="openBooking('Install Blinds')"> Book Now</button>   
+</div>
+<div class="card">
+<h3>General Mounting</h3>
+<p>Secure and Perfect aligned mounting</p>
+<button onclick="openBooking('General Mounting')"> Book Now</button>   
+</div>
+</section>
+ <section id="gallery">    
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="light.jpeg" alt="Light installation "width="300">
+<img src="fan.jpeg" alt="Ceiling fan installation "width="300">
+<img src="bed-frame.jpeg" alt="Furniture assembly work"width="300">
+<img src="dressing-table.jpeg" alt="Furniture assembly work"width="300">
+<img src="drawer.JPG" alt="Furniture assembly work"width="300">
+<img src="furniture.jpeg" alt="Furniture assembly work"width="300">
+<img src="pic1.jpeg" alt="Our work"width="300">  
+<img src="pic2.jpeg" alt="Our work"width="300">  
+<img src="pic3.jpeg" alt="Our work"width="300">  
+<img src="pic4.jpeg" alt="Our work"width="300">  
+<img src="pic5.jpeg" alt="Our work"width="300">  
+<img src="pic6.jpeg" alt="Our work"width="300">  
+<img src="pic7.jpeg" alt="Our work"width="300">  
+<img src="pic8.jpeg" alt="Our work"width="300">  
+<img src="pic9.jpeg" alt="Our work"width="300">  
+<img src="pic10.jpeg" alt="Our work"width="300">  
+<img src="pic11.jpeg" alt="Our work"width="300">  
+<img src="pic12.jpeg" alt="Our work"width="300">  
+</div>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<p>Over 10 years of professional handyman experience serving Fairfield and surrounding areas.</p>
+</section>  
+    
+<section>
+<h2>Service Area</h2>
+<div class="card">
+<p>Serving Fairfield, Vacaville, Dixon, Davis, Napa, Sonoma, Vallejo and surrounding areas. Same-day appointments available.</p>
+</div>
+</section>
+    
+<div class="cta">
+<h2>Need a Reliable Handyman Today?</h2>
+<a href="tel:7076486070" class="btn">Call 707-648-6070</a>
+</div>
+
+<footer id="contact">
+<p>Star Handyman Services | Fairfield, CA</p>
+<p> Email: star81work@gmail.com</p>
+</footer>
+
+ <!--BOOKING POPUP--> 
+ <div id="bookingPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h3 id="serviceTitle"></h3>
+    <form onsubmit="submitBooking(event)">
+      <input type="hidden" name="service" id="hiddenService">
+      <input type="date" name="date" required>
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="text" name="address" placeholder="Address" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+    <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
+      ✅ Booking received! We will contact you soon.
+    </div> 
+</div> 
+  </div>
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+function openBooking(service){
+document.getElementById("bookingPopup").style.display="block";
+document.getElementById("serviceTitle").innerText=service;
+document.getElementById("hiddenService").value=service;
+}
+function closeBooking(){
+document.getElementById("bookingPopup").style.display="none";
+}
+
+/* Sends data to Google sheets*/  
+function submitBooking(e){
+e.preventDefault();
+ const scriptURL = "https://script.google.com/macros/s/AKfycbyIF7XTj8JIg7PnpZ4lYtdDVjOx96gIfjN3h_Ar9w3eCwbPK7EAHmflaZT2RGWeTVnxhA/exec";  // ← paste  Apps Script Web App URL
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(response => {
+    console.log("Success!", response);
+  
+//Show confirmation message  
+document.getElementById("confirmationMessage").style.display="block";
+setTimeout(()=>{
+closeBooking();
+document.getElementById("confirmationMessage").style.display="none";
+e.target.reset();
+},2000); 
+})
+  .catch(error => {
+    console.error("Error!", error);
+    alert("There was an error submitting your booking.");
+  });    
+}  
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://starhandymanca.com/</loc>
+  </url>
+</urlset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
