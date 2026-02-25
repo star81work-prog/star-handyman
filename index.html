@@ -364,7 +364,6 @@ padding:20px;
     <span class="close" onclick="closeBooking()">&times;</span>
     <h3 id="serviceTitle"></h3>
     <form onsubmit="submitBooking(event)">
-      <input type="hidden" name="service" id="hiddenService">
       <input type="date" name="date" required>
       <input type="text" name="name" placeholder="Name" required>
       <input type="tel" name="phone" placeholder="Phone" required>
@@ -394,7 +393,7 @@ document.getElementById("bookingPopup").style.display="none";
 /* Sends data to Google sheets*/  
 function submitBooking(e){
 e.preventDefault();
- const scriptURL = "https://script.google.com/macros/s/AKfycbyIF7XTj8JIg7PnpZ4lYtdDVjOx96gIfjN3h_Ar9w3eCwbPK7EAHmflaZT2RGWeTVnxhA/exec";  // ← paste  Apps Script Web App URL
+ const scriptURL = "https://script.google.com/macros/s/AKfycbw1RabjIJwWAiTkm9BMciujuXPpeJgGGWEqIAaRHOEY/dev";  // ← paste  Apps Script Web App URL
 
   const form = e.target;
   const formData = new FormData(form);
@@ -423,6 +422,7 @@ e.target.reset();
 </script>
 </body>
 </html>
+
 
 
 
