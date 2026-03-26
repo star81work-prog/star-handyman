@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Handyman Services - Contact</title>
+<link rel="icon" href="logo.jpg">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Star Handyman Services</h1>
+  <nav class="navbar">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>  
+    <a href="tel:7076486070" class="btn">📞 Call Now</a>
+  </nav>
+</header>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<div class="card">
+  <p><strong>Phone:</strong> <a href="tel:7076486070">707-648-6070</a></p>
+  <p><strong>Email:</strong> <a href="mailto:starhandymanca@gmail.com">starhandymanca@gmail.com</a></p>
+  <p><strong>Service Areas:</strong> Fairfield, Vacaville, Dixon, Davis, Napa, Sonoma, Vallejo, and surrounding areas.</p>
+  <p>Same-day appointments available. Call now to schedule your service!</p>
+</div>
+</section>
+
+<footer>
+  <p>Star Handyman Services | Fairfield, CA</p>
+</footer>
+
+<!-- Booking popup -->
+<div id="bookingPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h3 id="serviceTitle"></h3>
+    <form onsubmit="submitBooking(event)">
+      <input type="hidden" id="hiddenService" name="service">
+      <input type="date" name="date" required>
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="text" name="address" placeholder="Address" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+    <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
+      ✅ Booking received! We will contact you soon.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

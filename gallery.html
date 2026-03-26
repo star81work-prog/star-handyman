@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Handyman Services - Gallery</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Star Handyman Services</h1>
+  <nav class="navbar">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>  
+    <a href="tel:7076486070" class="btn">📞 Call Now</a>
+  </nav>
+</header>
+
+<section id="gallery">
+<h2>Gallery</h2>
+<div class="gallery">
+  <img src="images/light.jpeg" alt="Light installation">
+  <img src="images/fan.jpeg" alt="Ceiling fan installation">
+  <img src="images/bed-frame.jpeg" alt="Furniture assembly work">
+  <img src="images/dressing-table.jpeg" alt="Furniture assembly work">
+  <img src="images/drawer.JPG" alt="Furniture assembly work">
+  <img src="images/furniture.jpeg" alt="Furniture assembly work">
+  <img src="images/pic1.jpeg" alt="Our work">
+  <img src="images/pic2.jpeg" alt="Our work">
+  <img src="images/pic3.jpeg" alt="Our work">
+  <img src="images/pic4.jpeg" alt="Our work">
+  <img src="images/pic5.jpeg" alt="Our work">
+  <img src="images/pic6.jpeg" alt="Our work">
+  <img src="images/pic7.jpeg" alt="Our work">
+  <img src="images/pic8.jpeg" alt="Our work">
+  <img src="images/pic9.jpeg" alt="Our work">
+  <img src="images/pic10.jpeg" alt="Our work">
+  <img src="images/pic11.jpeg" alt="Our work">
+  <img src="images/pic12.jpeg" alt="Our work">
+  <img src="images/gazebo1.JPG" alt="Our work">
+  <img src="images/gazebo2.JPG" alt="Our work">
+  <img src="images/gazebo3.JPG" alt="Our work">
+  <img src="images/plumbing.jpeg" alt="Our work">
+</div>
+</section>
+
+<footer>
+  <p>Star Handyman Services | Fairfield, CA</p>
+</footer>
+
+<!-- Booking popup same as index.html -->
+<div id="bookingPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h3 id="serviceTitle"></h3>
+    <form onsubmit="submitBooking(event)">
+      <input type="hidden" id="hiddenService" name="service">
+      <input type="date" name="date" required>
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="text" name="address" placeholder="Address" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+    <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
+      ✅ Booking received! We will contact you soon.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
