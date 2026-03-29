@@ -3,8 +3,11 @@
 
   <url>
     <loc>https://starhandymanca.com/</loc>
-    <lastmod>2026-02-26</lastmod>
-    <priority>1.00</priority>
   </url>
-
-</urlset>
+  <url>
+    <loc>https://starhandymanca.com/services.html</loc>
+  </url>
+  <url>
+    <loc>https://starhandymanca.com/contact.html</loc>
+  </url>
+ </urlset>
