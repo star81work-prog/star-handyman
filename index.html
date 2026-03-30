@@ -7,6 +7,7 @@
 <title>Star Handyman Services - Home</title>
 <link rel="icon" href="logo.jpg">
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 <link rel="canonical" href="https://starhandymanca.com/">  
 </head>
 
@@ -40,6 +41,25 @@
   <p>Star Handyman Services | Fairfield, CA</p>
   <p>Email: starhandymanca@gmail.com</p>
 </footer>
+<!-- Booking popup (same as index.html) -->
+<div id="bookingPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h3 id="serviceTitle"></h3>
+    <form onsubmit="submitBooking(event)">
+      <input type="hidden" id="hiddenService" name="service">
+      <input type="date" name="date" required>
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="text" name="address" placeholder="Address" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+    <div id="confirmationMessage" style="display:none; color:green; font-weight:bold;">
+      ✅ Booking received! We will contact you soon.
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
